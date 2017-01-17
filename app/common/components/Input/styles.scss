@@ -1,6 +1,6 @@
 
 $label: #3d3d3d;
-$default: #8f8f8f;
+$default: #dedede;
 $disabled: #dadcde;
 $focused: #11d8fb;
 $errored: #ff1f44;
@@ -87,10 +87,9 @@ $errored: #ff1f44;
 }
 
 .label-text {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   color: $label;
   font-size: 14px;
-  font-weight: bold;
 }
 
 .required-label {

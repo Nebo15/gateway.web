@@ -1,0 +1,11 @@
+
+.main {
+  position: relative;
+}
+
+.form {
+  &__error {
+    color: #ff1f44;
+    margin-bottom: 15px;
+  }
+}

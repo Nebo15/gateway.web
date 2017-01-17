@@ -7,7 +7,12 @@ import Icon from 'components/Icon';
 import styles from './styles.scss';
 
 /* eslint-disable jsx-a11y/label-has-for */
-const Checkbox = ({ checked = false, onChange = e => e, onBlur, onFocus, error, name }) => (
+const Checkbox = ({
+  checked = false,
+  onChange = e => e,
+  onBlur, onFocus,
+  error, name, labelText,
+}) => (
   <label className={classnames(styles.wrap, error && styles.isError)}>
     {
       <input
@@ -23,6 +28,10 @@ const Checkbox = ({ checked = false, onChange = e => e, onBlur, onFocus, error, 
     }
     <span className={styles.view}>
       <Icon name="check-right" />
+    </span>
+
+    <span className={styles.label}>
+      {labelText}
     </span>
   </label>
 );

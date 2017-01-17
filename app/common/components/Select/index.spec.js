@@ -30,7 +30,7 @@ describe('Select', () => {
     });
 
     it('active', () => {
-      expect(elem.find('div span').last().text()).to.equal('Item 2');
+      expect(elem.find('div span').at(1).text()).to.equal('Item 2');
       expect(elem.find(`.${styles.active}`)).to.have.length(1);
     });
 

@@ -26,7 +26,7 @@ $errored: #ff1f44;
     opacity: 0;
     width: 18px;
     font-size: 10px;
-    color: #11d8fb;
+    color: #44e240;
     transition: opacity 0.05s ease-in-out;
   }
 
@@ -39,6 +39,12 @@ $errored: #ff1f44;
       opacity: 1;
     }
   }
+}
+
+.label {
+  display: inline-block;
+  margin: 0 20px 0 10px;
+  vertical-align: middle;
 }
 
 .isError {

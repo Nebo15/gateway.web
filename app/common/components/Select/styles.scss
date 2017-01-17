@@ -1,4 +1,4 @@
-$border-color: #dadcde;
+$border-color: #dedede;
 $placeholder-color: #999;
 $hovered-bg: #f5f5f5;
 $active-color: #11d8fb;
@@ -21,15 +21,20 @@ $disabled-bg: #f5f5f5;
   }
 
   .control {
+    position: relative;
     width: 100%;
-    min-width: 200px;
+    min-width: 120px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    padding: 10px 20px;
-    line-height: 16px;
+    padding: 10px 30px 10px 20px;
+    line-height: 15px;
     box-shadow: 0 0 0 1px $border-color;
     cursor: pointer;
+  }
+
+  .label {
+    margin-bottom: 11px;
   }
 
   .list {
@@ -58,10 +63,11 @@ $disabled-bg: #f5f5f5;
 
       .icon {
         position: absolute;
-        right: 20px;
+        right: 10px;
         top: 50%;
         transform: translateY(-50%);
         font-size: 12px;
+        color: #44e240;
       }
 
       &:first-child {
@@ -140,5 +146,25 @@ $disabled-bg: #f5f5f5;
       right: 0;
       z-index: 2;
     }
+
+    .arrow {
+      transform: translateY(-50%) rotate(180deg);
+    }
   }
+}
+
+.arrow {
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #282828;
+  z-index: 2;
+  transition: transform 0.2s ease;
+  will-change: transform;
 }

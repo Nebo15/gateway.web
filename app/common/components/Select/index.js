@@ -15,6 +15,7 @@ class Select extends React.Component {
       PropTypes.number,
       PropTypes.string,
     ]),
+    labelText: PropTypes.string,
     open: PropTypes.bool,
     disabled: PropTypes.bool,
     placeholder: PropTypes.string,
@@ -71,6 +72,7 @@ class Select extends React.Component {
       options = [],
       placeholder,
       disabled,
+      labelText,
     } = this.props;
 
     const activeItem = this.state.active;
@@ -84,11 +86,13 @@ class Select extends React.Component {
     return (
       <OuterClick onClick={() => this.setState({ open: false })}>
         <section ref={ref => (this.selectNode = ref)} className={classNames}>
+          <div className={styles.label}>{labelText}</div>
           <div onClick={() => this.setState({ open: !this.state.open })} className={styles.control}>
             <span hidden={activeItem} className={styles.placeholder}>{placeholder}</span>
             <span hidden={!activeItem}>
               {activeItem && activeItem.title}
             </span>
+            <span className={styles.arrow} />
           </div>
           <ul ref={ref => (this.listNode = ref)} className={styles.list}>
             {
