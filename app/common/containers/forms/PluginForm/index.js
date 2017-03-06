@@ -160,8 +160,6 @@ export default class PluginForm extends React.Component {
       disabled: existingPlugins.indexOf(item.name) > -1,
     }));
 
-    console.log(this.isChanged);
-
     return (
       <div>
         <form>

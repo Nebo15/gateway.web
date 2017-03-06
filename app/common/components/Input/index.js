@@ -33,6 +33,7 @@ export const Component = ({
   onFocus,
   inputComponent = 'input',
   component = inputComponent,
+  useRef = el => el,
   theme = 'gray',
   className, // eslint-disable-line
   ...rest // eslint-disable-line
@@ -57,6 +58,7 @@ export const Component = ({
     onChange,
     onBlur,
     onFocus,
+    ref: useRef,
   };
 
   return (<span>
