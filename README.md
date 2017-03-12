@@ -1,5 +1,7 @@
 # API Gateway Dashboard
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Nebo15/gateway.web.svg)](https://greenkeeper.io/)
+
 [![Build history](https://buildstats.info/travisci/chart/Nebo15/gateway.web)](https://travis-ci.org/Nebo15/gateway.web)
 
 API Gateway Dashboard - manage API Gateway settings, review and replay requests from history.
