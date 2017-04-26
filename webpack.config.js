@@ -160,9 +160,9 @@ const serverConfig = merge({
 }, genConfig);
 
 if (DEBUG) {
-  config.output.publicPath = 'http://0.0.0.0:3030/static/';
+  config.output.publicPath = 'http://localhost:3030/static/';
   config.entry.app = [
-    'webpack-dev-server/client?http://0.0.0.0:3030', // WebpackDevServer host and port
+    'webpack-dev-server/client?http://localhost:3030', // WebpackDevServer host and port
     'webpack/hot/only-dev-server',
     config.entry.app,
   ];

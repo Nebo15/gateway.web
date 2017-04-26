@@ -6,7 +6,7 @@ import FieldInput from 'components/reduxForm/FieldInput';
 import Button from 'components/Button';
 import Icon from 'components/Icon';
 
-import validate from 'modules/validate';
+import { reduxFormValidate } from 'react-nebo15-validate';
 
 import styles from './styles.scss';
 
@@ -41,7 +41,7 @@ export const Component = ({ handleSubmit = () => {}, onSubmit }) => (
 export default withStyles(styles)(
   reduxForm({
     form: 'signin',
-    validate: validate({
+    validate: reduxFormValidate({
       email: {
         required: true,
         email: true,

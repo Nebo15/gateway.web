@@ -15,7 +15,7 @@ import { H3 } from 'components/Title';
 
 import ConfirmFormChanges from 'containers/blocks/ConfirmFormChanges';
 
-import validate from 'modules/validate';
+import { reduxFormValidate } from 'react-nebo15-validate';
 
 import styles from './styles.scss';
 
@@ -27,7 +27,7 @@ import styles from './styles.scss';
       scheme: 'http',
     },
   },
-  validate: validate({
+  validate: reduxFormValidate({
     name: {
       required: true,
     },

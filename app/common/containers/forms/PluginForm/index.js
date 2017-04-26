@@ -10,13 +10,14 @@ import Button from 'components/Button';
 import Line from 'components/Line';
 import { H3 } from 'components/Title';
 
-import validate from 'modules/validate';
+import { reduxFormValidate } from 'react-nebo15-validate';
 
 import PluginProxyForm from 'containers/forms/PluginProxyForm';
 import PluginJWTForm from 'containers/forms/PluginJWTForm';
 import PluginACLForm from 'containers/forms/PluginACLForm';
 import PluginIPRestrictionForm from 'containers/forms/PluginIPRestrictionForm';
 import PluginValidatorForm from 'containers/forms/PluginValidatorForm';
+import PluginScopesResolverForm from 'containers/forms/PluginScopesResolverForm';
 
 import ConfirmFormChanges from 'containers/blocks/ConfirmFormChanges';
 
@@ -30,6 +31,7 @@ const pluginsComponentMap = {
   acl: PluginACLForm,
   ip_restriction: PluginIPRestrictionForm,
   validator: PluginValidatorForm,
+  scopes: PluginScopesResolverForm,
   idempotency: null,
 };
 
@@ -41,7 +43,7 @@ const availablePlugins = Object.keys(pluginsComponentMap);
   initialValues: {
     is_enabled: true,
   },
-  validate: validate({
+  validate: reduxFormValidate({
     name: {
       required: true,
     },
@@ -154,13 +156,12 @@ export default class PluginForm extends React.Component {
       { name: 'validator', title: 'Validator' },
       { name: 'idempotency', title: 'Idempotency' },
       { name: 'ip_restriction', title: 'IP Restriction' },
+      { name: 'scopes', title: 'Scopes Resolver' },
     ].filter(i => availablePlugins.indexOf(i.name) > -1)
     .map(item => ({
       ...item,
       disabled: existingPlugins.indexOf(item.name) > -1,
     }));
-
-    console.log(this.isChanged);
 
     return (
       <div>
@@ -199,7 +200,7 @@ export default class PluginForm extends React.Component {
             </div>
           </div>)
         }
-        <Button id="plugins-button-add" onClick={() => this.onSubmit()} disabled={!this.isChanged && this.pluginForm}>
+        <Button id="plugins-button-add" onClick={() => this.onSubmit()} disabled={!this.isChanged && !!this.pluginForm}>
           {isEdit ? 'Save plugin' : 'Add plugin'}
         </Button>
 

@@ -10,7 +10,7 @@ import Button from 'components/Button';
 import Line from 'components/Line';
 import { H4 } from 'components/Title';
 
-import validate, { collectionOf } from 'modules/validate';
+import { reduxFormValidate, collectionOf } from 'react-nebo15-validate';
 
 import FieldsList from 'containers/blocks/FieldsList';
 
@@ -66,7 +66,7 @@ const RuleField = ({ rule, index, fields }) => (
 
 @reduxForm({
   form: 'plugin-settings-form',
-  validate: validate({
+  validate: reduxFormValidate({
     'settings.rules': collectionOf({
       methods: {
         required: true,

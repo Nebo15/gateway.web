@@ -8,7 +8,7 @@ import FiledSelect from 'components/reduxForm/FieldSelect';
 
 import Line from 'components/Line';
 
-import validate from 'modules/validate';
+import { reduxFormValidate } from 'react-nebo15-validate';
 
 import styles from './styles.scss';
 
@@ -19,7 +19,7 @@ import styles from './styles.scss';
       scheme: 'http',
     },
   },
-  validate: validate({
+  validate: reduxFormValidate({
     'settings.host': {
       required: true,
     },

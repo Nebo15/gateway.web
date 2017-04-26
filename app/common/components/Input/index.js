@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 import withStyles from 'nebo15-isomorphic-style-loader/lib/withStyles';
-import { ErrorMessages } from 'modules/validate';
+import { ErrorMessages } from 'react-nebo15-validate';
 
 import styles from './styles.scss';
 

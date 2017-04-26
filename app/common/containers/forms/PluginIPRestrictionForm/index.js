@@ -2,7 +2,7 @@ import React from 'react';
 import withStyles from 'nebo15-isomorphic-style-loader/lib/withStyles';
 import { reduxForm, Field, FieldArray } from 'redux-form';
 
-import validate, { arrayOf } from 'modules/validate';
+import { reduxFormValidate, arrayOf } from 'react-nebo15-validate';
 
 import FieldInput from 'components/reduxForm/FieldInput';
 
@@ -33,7 +33,7 @@ const RuleField = ({ rule, index, fields }) => (
 
 @reduxForm({
   form: 'plugin-settings-form',
-  validate: validate({
+  validate: reduxFormValidate({
     'settings.whitelist': arrayOf({
       ipv4: true,
       required: true,

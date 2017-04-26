@@ -4,13 +4,13 @@ import { reduxForm, Field, FormSection } from 'redux-form';
 
 import FieldInput from 'components/reduxForm/FieldInput';
 
-import validate from 'modules/validate';
+import { reduxFormValidate } from 'react-nebo15-validate';
 
 import styles from './styles.scss';
 
 @reduxForm({
   form: 'plugin-settings-form',
-  validate: validate({
+  validate: reduxFormValidate({
     'settings.signature': {
       required: true,
     },
