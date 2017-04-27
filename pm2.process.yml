@@ -1,0 +1,4 @@
+apps:
+  - script   : 'static/server.js'
+    name     : 'app'
+    log_type : 'json'
