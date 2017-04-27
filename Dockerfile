@@ -4,11 +4,13 @@ EXPOSE 8080
 
 ENV NODE_ENV production
 
-WORKDIR /annon.web
+COPY package.json /tmp/package.json
+RUN cd /tmp && npm install --production --quiet || { exit 1; } && mkdir -p /opt/app && cp -a /tmp/node_modules /opt/app/
 
-COPY . ./
+WORKDIR /opt/app
 
-RUN npm install --production
+COPY . /opt/app
+
 RUN npm run build
 
 RUN rm -rf ./app/client \
