@@ -29,7 +29,7 @@ script:
 - RUNNING_CONTAINERS=`docker ps | wc -l`;
   if [ "${RUNNING_CONTAINERS//[[:space:]]/}" == "1" ]; then
     echo "[E] Container is not started\!";
-    docker logs mastercard.web --details --since 5h;
+    docker logs annon.web --details --since 5h;
     exit 1;
   fi;
 - npm run nightwatch -- -e travis
