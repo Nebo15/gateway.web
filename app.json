@@ -1,6 +1,7 @@
 {
   "name": "Annon Dashboard",
   "description": "Management UI for Annon API Gateway.",
+  "logo": "https://raw.githubusercontent.com/Nebo15/annon.web/master/assets/images/icons/apple-touch-icon.png",
   "scripts": {},
   "env": {
     "MANAGEMENT_ENDPOINT": {
