@@ -53,7 +53,7 @@ npm run dev ## run app localy
 #### Start Annon Gateway (API)
 
 ```
-docker-compose up
+docker-compose -f docker/dc.api.yml up
 ```
 
 At the first time, API will not start because a Postgres need time to create database and etc. The official Postgres docker container is sending start signal before the full end of the starting process.

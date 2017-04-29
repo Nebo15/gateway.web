@@ -16,7 +16,7 @@ node_js:
 - 6.9.1
 before_install:
 - npm run docker:up
-- docker-compose -f ./docker/dc.travis.yml up -d
+- docker-compose -f ./dc.api.yml up -d
 - chmod -R +x bin
 script:
 - npm run test
