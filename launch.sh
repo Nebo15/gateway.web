@@ -34,7 +34,7 @@ welcome() {
     echo -e " ${color_title}/_/    \_\|_|  \__| |_|  \__|  \____/  |_|  \__| \033[0m"
     echo -e " ${color_title}    | |                                          \033[0m${color_text}http://nebo15.com\033[0m"
     echo -e " ${color_title}  __| | ___ _ __ ___   ___                                               \033[0m"
-    echo -e " ${color_title} / _\`|/ _ \ '_ \` _ \/ _ \                                              \033[0m"
+    echo -e " ${color_title} / _\`|/ _ \ '_ \ _ \ / _ \                                              \033[0m"
     echo -e " ${color_title}| (_| |  __/ | | | | | (_) |                                             \033[0m"
     echo -e " ${color_title} \__,_|\___|_| |_| |_|\___/                                              \033[0m"
     echo
