@@ -1,7 +1,7 @@
 
 let config = {};
 
-if (global.__CLIENT__ && window && window.__CONFIG__) {
+if (__CLIENT__ && window && window.__CONFIG__) {
   try {
     config = JSON.parse(unescape(window.__CONFIG__));
   } catch (e) {} // eslint-disable-line

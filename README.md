@@ -8,7 +8,7 @@ Annon Dashboard is a management UI for [Annon API Gateway](github.com/nebo15/ann
 
 ### Heroku One-Click Deployment
 
-TBD.
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/nebo15/annon.web)
 
 ### Docker
 
