@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 
 const karmaWebpack = require('karma-webpack');
 const karmaMocha = require('karma-mocha');
@@ -55,6 +56,11 @@ module.exports = (config) => {
         'react/lib/ExecutionEnvironment': true,
         'react/lib/ReactContext': true,
       },
+      plugins: [
+        new webpack.DefinePlugin({
+          __CLIENT__: true,
+        }),
+      ],
       module: {
         loaders: [
           {

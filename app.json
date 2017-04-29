@@ -1,15 +1,22 @@
 {
   "name": "Annon Dashboard",
   "description": "Management UI for Annon API Gateway.",
+  "logo": "https://raw.githubusercontent.com/Nebo15/annon.web/master/assets/images/icons/apple-touch-icon.png",
   "scripts": {},
   "env": {
     "MANAGEMENT_ENDPOINT": {
       "description": "Annon API Gateway management API host and port",
-      "value": "http://37.139.11.82:4001"
+      "required": true,
+      "value": ""
     },
     "PUBLIC_ENDPOINT": {
       "description": "Annon API Gateway public API host and port",
-      "value": "http://37.139.11.82:4000"
+      "required": true,
+      "value": ""
+    },
+    "TRACER_URL": {
+      "description": "URL to external logs manager. You can use {request_id} variable in URL. eg. https://example.com/logs/{request_id}.",
+      "value": ""
     }
   },
   "formation": {
