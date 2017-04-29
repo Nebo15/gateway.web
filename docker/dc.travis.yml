@@ -1,16 +1,5 @@
 version: '2'
 services:
-  app:
-    image: "nebo15/annon.web"
-    links:
-      - "api:api"
-    depends_on:
-      - api
-    environment:
-      - MANAGEMENT_ENDPOINT=http://api:4001
-      - PUBLIC_ENDPOINT=http://api:4000
-    ports:
-      - "8080:8080"
   api:
     restart: "always"
     image: "nebo15/gateway:latest"
@@ -43,5 +32,3 @@ services:
       - POSTGRES_DB=gateway
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-    volumes:
-      - '.postgres:/var/lib/postgresql/data'
