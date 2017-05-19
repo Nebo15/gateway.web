@@ -1,8 +1,19 @@
 version: '2'
 services:
+  app:
+    build: "../"
+    links:
+      - "api:api"
+    depends_on:
+      - api
+    environment:
+      - MANAGEMENT_ENDPOINT=http://api:4001
+      - PUBLIC_ENDPOINT=http://api:4000
+    ports:
+      - "8080:8080"
   api:
     restart: "always"
-    image: "nebo15/gateway:latest"
+    image: "nebo15/annon_api:0.2.91"
     links:
       - "postgres:postgres"
     depends_on:

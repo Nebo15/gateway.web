@@ -89,7 +89,6 @@
     "lodash": "^4.16.0",
     "moment": "^2.17.1",
     "nebo15-isomorphic-style-loader": "^1.0.0",
-    "node-uuid": "^1.4.8",
     "normalizr": "^2.2.0",
     "path": "0.12.7",
     "postcss": "^5.2.0",
@@ -136,6 +135,7 @@
     "svg-inline-react": "^1.0.2",
     "system": "^1.2.0",
     "text-mask-addons": "^1.0.1",
+    "uuid": "^3.0.1",
     "webpack": "1.13.1",
     "xhr2": "^0.1.3"
   },
