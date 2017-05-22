@@ -1,0 +1,35 @@
+
+.numbers {
+  margin-left: -24px;
+  margin-top: -12px;
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    height: 115px;
+    margin-left: 24px;
+    margin-top: 12px;
+    text-align: center;
+    padding: 24px 24px 40px;
+    border-bottom: 4px solid #e97045;
+    border-left: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    border-top: 1px solid #dedede;
+  }
+
+  &__title {
+    font-size: 14px;
+  }
+
+  &__value {
+    margin-top: 12px;
+    font-size: 24px;
+    font-weight: 400;
+  }
+}
+
+.page {
+  &__nodes {
+    margin-top: 20px;
+  }
+}

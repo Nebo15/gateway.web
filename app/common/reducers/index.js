@@ -5,14 +5,12 @@ import { routerReducer } from 'react-router-redux';
 import ApiListPage from 'containers/pages/ApiListPage/redux';
 import ApiCreatePage from 'containers/pages/ApiCreatePage/redux';
 import ApiEditPage from 'containers/pages/ApiEditPage/redux';
-
 import PluginEditPage from 'containers/pages/PluginEditPage/redux';
 import PluginCreatePage from 'containers/pages/PluginCreatePage/redux';
-
 import RequestListPage from 'containers/pages/RequestListPage/redux';
+import StatusPage from 'containers/pages/StatusPage/redux';
 
 import Aside from 'containers/blocks/Aside/redux';
-
 
 import apis from 'redux/apis';
 import requests from 'redux/requests';
@@ -31,6 +29,7 @@ const pages = combineReducers({
   PluginEditPage,
   PluginCreatePage,
   RequestListPage,
+  StatusPage,
 });
 
 const blocks = combineReducers({

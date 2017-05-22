@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, IndexRedirect, IndexRoute, Redirect } from 'react-router';
+import { Route, IndexRedirect, IndexRoute } from 'react-router';
 
 import ApiListPage from 'containers/pages/ApiListPage';
 import ApiCreatePage from 'containers/pages/ApiCreatePage';
@@ -9,6 +9,7 @@ import PluginCreatePage from 'containers/pages/PluginCreatePage';
 import PluginEditPage from 'containers/pages/PluginEditPage';
 
 import RequestListPage from 'containers/pages/RequestListPage';
+import StatusPage from 'containers/pages/StatusPage';
 
 import NotFoundPage from 'containers/pages/NotFoundPage';
 
@@ -30,8 +31,8 @@ export const configureRoutes = ({ store }) => { // eslint-disable-line
           </Route>
         </Route>
         <Route path="requests" component={RequestListPage} />
-        <Route path="404" component={NotFoundPage} />
-        <Redirect from="*" to="/404" />
+        <Route path="status" component={StatusPage} />
+        <Route path="*" component={NotFoundPage} />
       </Route>
     </Route>
   );
