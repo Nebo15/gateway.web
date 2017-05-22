@@ -1,6 +1,6 @@
 {
   "name": "annon.web",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "API Gateway web application",
   "repository": "https://github.com/Nebo15/annon.web.git",
   "scripts": {
