@@ -8,6 +8,10 @@ Annon Dashboard is a management UI for [Annon API Gateway](github.com/nebo15/ann
 
 ![UI Screenshow](https://github.com/Nebo15/annon.web/raw/master/docs/images/ui-animated.gif)
 
+# Dependencies
+
+- [nebo15/annon_api](https://hub.docker.com/r/nebo15/annon_api/) >= 0.2.94
+
 ## Installation
 
 ### Heroku One-Click Deployment

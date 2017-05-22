@@ -40,7 +40,9 @@ export const createApi = (body, options) => invoke({
   headers: {
     'content-type': 'application/json',
   },
-  body,
+  body: {
+    api: body,
+  },
   types: ['apis/CREATE_REQUEST', {
     type: 'apis/CREATE_SUCCESS',
     payload: (action, state, res) => res.json().then(
@@ -55,7 +57,9 @@ export const updateApi = (apiId, body, options) => invoke({
   headers: {
     'content-type': 'application/json',
   },
-  body,
+  body: {
+    api: body,
+  },
   types: ['apis/UPDATE_REQUEST', {
     type: 'apis/UPDATE_SUCCESS',
     payload: (action, state, res) => res.json().then(
@@ -64,13 +68,12 @@ export const updateApi = (apiId, body, options) => invoke({
   }, 'apis/UPDATE_FAILURE'],
 });
 
-export const deleteApi = (apiId, body, options) => invoke({
+export const deleteApi = (apiId, options) => invoke({
   endpoint: createUrl(`${MANAGEMENT_API_URL}/apis/${apiId}`, options),
   method: 'DELETE',
   headers: {
     'content-type': 'application/json',
   },
-  body,
   types: ['apis/DELETE_REQUEST', 'apis/DELETE_SUCCESS', 'apis/DELETE_FAILURE'],
 });
 

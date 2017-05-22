@@ -25,7 +25,9 @@ export const bindPlugin = (apiId, body, options) => invoke({
   headers: {
     'content-type': 'application/json',
   },
-  body,
+  body: {
+    plugin: body,
+  },
   types: ['plugins/BIND_REQUEST', {
     type: 'plugins/BIND_SUCCESS',
     payload: (action, state, res) => res.json().then(
@@ -40,7 +42,9 @@ export const updatePlugin = (apiId, name, body, options) => invoke({
   headers: {
     'content-type': 'application/json',
   },
-  body,
+  body: {
+    plugin: body,
+  },
   types: ['plugins/UPDATE_REQUEST', {
     type: 'plugins/UPDATE_SUCCESS',
     payload: (action, state, res) => res.json().then(
