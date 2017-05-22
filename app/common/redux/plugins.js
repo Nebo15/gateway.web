@@ -20,8 +20,8 @@ export const fetchPlugins = (apiId, options) => invoke({
 });
 
 export const bindPlugin = (apiId, body, options) => invoke({
-  endpoint: createUrl(`${MANAGEMENT_API_URL}/apis/${apiId}/plugins`, options),
-  method: 'POST',
+  endpoint: createUrl(`${MANAGEMENT_API_URL}/apis/${apiId}/plugins/${body.name}`, options),
+  method: 'PUT',
   headers: {
     'content-type': 'application/json',
   },
