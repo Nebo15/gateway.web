@@ -22,6 +22,7 @@ script:
 - npm run lint
 - ./bin/version-increment.sh
 - ./bin/build.sh
+- ./bin/start.sh
 - docker-compose -f ./docker/dc.travis.yml up -d
 - sleep 5
 - docker ps
