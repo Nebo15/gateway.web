@@ -13,7 +13,7 @@ module.exports = {
     client.url().refresh();
     client.page.page404Page().assert404Page();
     client.url(`${client.launchUrl}/fsdffss`);
-    client.page.page404Page().assert404Page();
+    client.page.page404Page().assert404Page('fsdffss');
   },
   after: (client) => {
     client.end();

@@ -8,11 +8,11 @@ module.exports = {
     },
   },
   commands: [{
-    assert404Page() {
+    assert404Page(url) {
       return this
         .waitForElementPresent('@error404Assert')
         .assert.visible('@error404Assert')
-        .assert.urlContains('404');
+        .assert.urlContains(url || '404');
     },
   }],
 };
