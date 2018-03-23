@@ -14,7 +14,7 @@ import styles from './styles.scss';
 
 @withStyles(styles)
 @provideHooks({
-  fetch: ({ dispatch, params }) => dispatch(pluginsFetch(params.apiId, params.pluginId)),
+  fetch: ({ dispatch, params }) => dispatch(pluginsFetch(params.apiId)),
 })
 @connect(state => ({
   plugins: getPlugins(state, state.pages.PluginCreatePage.plugins).map(i => i.name),

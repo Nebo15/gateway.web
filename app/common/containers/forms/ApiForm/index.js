@@ -28,6 +28,7 @@ import styles from './styles.scss';
     request: {
       scheme: 'http',
     },
+    matching_priority: '1',
   },
   validate: reduxFormValidate({
     name: {
@@ -82,18 +83,16 @@ export default class ApiForm extends React.Component {
 
         <div className={classnames(styles.row, styles['row--name'])}>
           <div className={styles.row__field}><Field name="name" labelText="Name *" component={FieldInput} /></div>
+          <div className={styles.row__field}><Field name="matching_priority" labelText="Matching priority" component={FieldInput} /></div>
+        </div>
+
+        <Line width="280" />
+
+        <div className={classnames(styles.row, styles['row--name'])}>
+          <div className={styles.row__field}><Field name="docs_url" labelText="Documentation URL" placeholder="eg. https://docs.annon.apiary.io" component={FieldInput} /></div>
           <div className={styles.row__field}><Field name="description" labelText="Description" component={FieldInput} /></div>
         </div>
 
-        <div className={classnames(styles.row, styles['row--small'])}>
-          <Field
-            name="docs_url"
-            labelText="Documentation URL"
-            placeholder="eg. https://docs.annon.apiary.io"
-            component={FieldInput}
-          />
-        </div>
-        <Line width="280" />
         <div className={classnames(styles.row, styles['row--small'])}>
           <Field
             name="health"
@@ -108,6 +107,7 @@ export default class ApiForm extends React.Component {
             ]}
           />
         </div>
+
         <div className={classnames(styles.row, styles['row--small'])}>
           <Field
             name="disclose_status"
@@ -115,7 +115,6 @@ export default class ApiForm extends React.Component {
             component={FieldCheckbox}
           />
         </div>
-        <Line width="280" />
 
         <H3>Request</H3>
 

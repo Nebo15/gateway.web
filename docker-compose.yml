@@ -2,7 +2,7 @@ version: '2'
 services:
   api:
     restart: "always"
-    image: "nebo15/annon_api:0.2.94"
+    image: "nebo15/annon_api:0.14.0"
     links:
       - "postgres:postgres"
     depends_on:

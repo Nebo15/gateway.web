@@ -27,7 +27,7 @@ export const configureRoutes = ({ store }) => { // eslint-disable-line
           <Route path=":apiId" component={ApiEditPage} />
           <Route path=":apiId/plugins">
             <Route path="add" component={PluginCreatePage} />
-            <Route path=":pluginId" component={PluginEditPage} />
+            <Route path=":pluginName" component={PluginEditPage} />
           </Route>
         </Route>
         <Route path="requests" component={RequestListPage} />

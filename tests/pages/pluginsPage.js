@@ -52,13 +52,13 @@ module.exports = {
       selector: '#acl-plugin-scopes0 label:nth-child(1)',
     },
     proxyHostInput: {
-      selector: 'input[name="settings.host"]',
+      selector: 'input[name="settings.upstream.host"]',
     },
     proxyPortInput: {
-      selector: 'input[name="settings.port"]',
+      selector: 'input[name="settings.upstream.port"]',
     },
     proxyPathInput: {
-      selector: 'input[name="settings.path"]',
+      selector: 'input[name="settings.upstream.path"]',
     },
     ipAdressInput: {
       selector: 'input[name="settings.whitelist[0]"]',

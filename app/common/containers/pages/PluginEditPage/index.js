@@ -9,7 +9,7 @@ import { Confirm } from 'components/Popup';
 import FormPageWrapper from 'containers/blocks/FormPageWrapper';
 import PluginForm from 'containers/forms/PluginForm';
 
-import { getPlugin, getPlugins } from 'reducers';
+import { getPluginByName, getPlugins } from 'reducers';
 
 import { onSubmitEdit, pluginsFetch, onUnbind } from './redux';
 
@@ -17,12 +17,12 @@ import styles from './styles.scss';
 
 @withStyles(styles)
 @provideHooks({
-  fetch: ({ dispatch, params }) => dispatch(pluginsFetch(params.apiId, params.pluginId)),
+  fetch: ({ dispatch, params }) => dispatch(pluginsFetch(params.apiId, params.pluginName)),
 })
 @connect((state, { params }) => ({
   ...state.pages.PluginEditPage,
   plugins: getPlugins(state, state.pages.PluginEditPage.plugins).map(i => i.name),
-  plugin: getPlugin(state, params.pluginId) || {},
+  plugin: getPluginByName(state, params.apiId, params.pluginName) || {},
 }), { onSubmitEdit, onUnbind })
 export default class ApiCreatePage extends React.Component {
   state = {

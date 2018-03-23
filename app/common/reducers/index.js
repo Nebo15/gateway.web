@@ -52,5 +52,6 @@ export const getApis = (state, apis) => apis.map(id => getApi(state, id));
 export const getRequest = (state, requestId) => state.data.requests[requestId];
 export const getRequests = (state, requests) => requests.map(id => getRequest(state, id));
 
-export const getPlugin = (state, pluginId) => state.data.plugins[pluginId];
+export const getPlugin = (state, id) => state.data.plugins[id];
+export const getPluginByName = (state, apiId, pluginName) => state.data.plugins[[apiId, pluginName].join('.')];
 export const getPlugins = (state, plugins) => plugins.map(id => getPlugin(state, id));

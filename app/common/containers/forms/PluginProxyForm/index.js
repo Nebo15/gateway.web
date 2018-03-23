@@ -16,17 +16,19 @@ import styles from './styles.scss';
   form: 'plugin-settings-form',
   initialValues: {
     settings: {
-      scheme: 'http',
+      upstream: {
+        scheme: 'http',
+      },
     },
   },
   validate: reduxFormValidate({
-    'settings.host': {
+    'settings.upstream.host': {
       required: true,
     },
-    'settings.port': {
+    'settings.upstream.port': {
       required: true,
     },
-    'settings.path': {
+    'settings.upstream.path': {
       required: true,
     },
   }),
@@ -39,31 +41,33 @@ export default class PluginProxyForm extends React.Component {
     return (
       <form onSubmit={handleSubmit} id="plugin-proxy-form">
         <FormSection name="settings">
-          <div className={styles.columns}>
-            <div>
-              <Field
-                labelText="Schema"
-                name="scheme"
-                component={FiledSelect}
-                options={[
-                  { name: 'http', title: 'http' },
-                  { name: 'https', title: 'https' },
-                ]}
-              />
+          <FormSection name="upstream">
+            <div className={styles.columns}>
+              <div>
+                <Field
+                  labelText="Schema"
+                  name="scheme"
+                  component={FiledSelect}
+                  options={[
+                    { name: 'http', title: 'http' },
+                    { name: 'https', title: 'https' },
+                  ]}
+                />
+              </div>
+              <div>
+                <Field labelText="Host" name="host" component={FieldInput} />
+              </div>
             </div>
-            <div>
-              <Field labelText="Host" name="host" component={FieldInput} />
-            </div>
-          </div>
 
-          <div className={styles.columns}>
-            <div>
-              <Field normalize={a => (isNaN(Number(a)) ? a : Number(a))} labelText="Port" type="tel" name="port" component={FieldInput} />
+            <div className={styles.columns}>
+              <div>
+                <Field normalize={a => (isNaN(Number(a)) ? a : Number(a))} labelText="Port" type="tel" name="port" component={FieldInput} />
+              </div>
+              <div>
+                <Field labelText="Path" name="path" component={FieldInput} />
+              </div>
             </div>
-            <div>
-              <Field labelText="Path" name="path" component={FieldInput} />
-            </div>
-          </div>
+          </FormSection>
 
           <Line width="280" />
 

@@ -29,10 +29,10 @@ export const onUnbind = (apiId, name) => dispatch => dispatch(unbindPlugin(apiId
 
 export const setPlugins = createAction('apiEditPage/SET_PLUGINS');
 
-export const pluginsFetch = (apiId, pluginId) => dispatch =>
+export const pluginsFetch = (apiId, pluginName) => dispatch =>
   dispatch(fetchPlugins(apiId))
     .then((action) => {
-      const plugin = action.payload.entities.plugins[pluginId];
+      const plugin = action.payload.entities.plugins[pluginName];
 
       return dispatch([
         setPlugins(action.payload.result),
